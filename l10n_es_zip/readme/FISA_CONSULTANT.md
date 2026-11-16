@@ -168,6 +168,10 @@ postal code that is not in the list.
 - [ ] A contact imported with the code `1007` and the city *Armentia* gets, after the action
       **Spain: set city from ZIP**, the code `01007`, the city *Armentia* and the region
       *Araba/Álava (ES)*.
+- [ ] At install, a Spanish contact created beforehand with a postal code is linked to its locality: directly on a
+      small database; on a large one, the scheduled action **Spain: link contacts to the city of their ZIP**
+      is active (**Settings → Technical → Scheduled Actions**, developer mode) and deactivates itself when
+      it has finished.
 - [ ] Contacts of other countries stay unchanged after the action.
 - [ ] (With `deltatech_delivery`) in **Carrier Details**, for a delivery to Spain, the postal code
       fills in the region, with no manual lookup.

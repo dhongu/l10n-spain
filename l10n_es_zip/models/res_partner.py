@@ -17,7 +17,7 @@ RELINK_BATCH = 5000
 
 
 def _normalize_city(name):
-    """Compare city names without accents, punctuation and case ("Forlì" = "forli", "Sant'Elia" = "Sant Elia")."""
+    """Compare city names without accents, punctuation and case ("Málaga" = "malaga", "L'Hospitalet" = "L Hospitalet")."""
     name = unicodedata.normalize("NFKD", name or "")
     name = "".join(c for c in name if not unicodedata.combining(c)).casefold()
     return " ".join(re.sub(r"[^\w]+", " ", name).split())
@@ -36,11 +36,11 @@ class ResPartner(models.Model):
 
     @api.model
     def _l10n_es_city_from_zip(self, zip_code, city_name=None):
-        """Return (city, province) for an Spanish postal code.
+        """Return (city, region) for a Spanish postal code.
 
         A postal code is often shared by a locality and its neighbours: the city is returned only
-        when it is unique, or when the city name picks one of them; the province is
-        returned when all the localities of the postal code are in the same province.
+        when it is unique, or when the city name picks one of them; the region is
+        returned when all the localities of the postal code are in the same region.
         """
         City = self.env["res.city"]
         zip_code = _normalize_zip(zip_code)
