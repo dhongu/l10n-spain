@@ -1,0 +1,10 @@
+{
+  "title": "Spain - City from ZIP",
+  "summary": "City and province from the Spanish postal code",
+  "edition": "community",
+  "features": [
+    "Spanish localities from GeoNames",
+    "City and province from the postal code",
+    "Bulk link of existing contacts"
+  ]
+}
