@@ -369,7 +369,7 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:35c3761a1ce827472a8feb3d00d65c1f242b4a5f0f438d11ee22bd7a736d5b35
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/license-LGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/dhongu/l10n-spain/tree/19.0/l10n_es_zip"><img alt="dhongu/l10n-spain" src="https://img.shields.io/badge/github-dhongu%2Fl10n--spain-lightgray.png?logo=github" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/license-LGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/dhongu/l10n-spain/tree/20.0/l10n_es_zip"><img alt="dhongu/l10n-spain" src="https://img.shields.io/badge/github-dhongu%2Fl10n--spain-lightgray.png?logo=github" /></a></p>
 <p>Loads the Spanish localities (localidades) with their postal code and
 region, and fills in the city and the region of Spanish addresses from
 the postal code.</p>
@@ -399,63 +399,85 @@ shipment can be sent to Spain without looking it up by hand.</li>
 <ul class="simple">
 <li><a class="reference internal" href="#usage" id="toc-entry-1">Usage</a></li>
 <li><a class="reference internal" href="#changelog" id="toc-entry-2">Changelog</a><ul>
-<li><a class="reference internal" href="#section-1" id="toc-entry-3">19.0.1.0.0 (2026-11-16)</a></li>
+<li><a class="reference internal" href="#section-1" id="toc-entry-3">20.0.1.0.0 (2026-11-16)</a></li>
+<li><a class="reference internal" href="#section-2" id="toc-entry-4">19.0.1.0.0 (2026-11-16)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-4">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-5">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-6">Authors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-7">Maintainers</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-5">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-6">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-7">Authors</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-8">Maintainers</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
-<ol class="arabic simple">
-<li>Open <em>Contacts → Configuration → Localities</em> (developer mode) and
-filter on a postal code: the Spanish localities of that postal code
-are listed with their region.</li>
-<li>Open a Spanish contact and type the postal code in the address: the
-city and the region are filled in.</li>
-<li>When the postal code is shared by several localities, only the region
+<ol class="arabic">
+<li><p class="first">As an administrator, open <strong>Contacts → Configuration → Localization →
+Cities</strong> and search for a postal code: the Spanish localities of that
+postal code are listed with their province.</p>
+<p><img alt="Cities list filtered on the postal code 01007: the localities Armentia, Vitoria-Gasteiz, all of the state Araba/Álava (ES)" src="https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/01_lista_localitati_cap.png" /></p>
+</li>
+<li><p class="first">Open a Spanish contact and type the postal code in the address: the
+city and the region are filled in.</p>
+<p><img alt="Contact in Spain: the postal code 01160 fills in the city Ibarra and the state Araba/Álava (ES)" src="https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/02_partener_cap_unic.png" /></p>
+</li>
+<li><p class="first">When the postal code is shared by several localities, only the region
 is filled in; choose the city from the list (type the postal code or
-the name in the city field).</li>
-<li>To fix the existing contacts, select them in the contacts list and
-use <em>Actions → Spain: set city from ZIP</em>.</li>
+the name in the city field).</p>
+<p><img alt="Contact in Spain: the postal code 01007 fills in the state Araba/Álava (ES); the city field lists the localities of 01007" src="https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/03_partener_cap_comun.png" /></p>
+</li>
+<li><p class="first">To complete existing or imported contacts, select them in the list
+and run <em>Actions → Spain: set city from ZIP</em>.</p>
+<p><img alt="Contacts list with Spanish contacts selected and the Actions menu open on Spain: set city from ZIP" src="https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/04_actiune_contacte_existente.png" /></p>
+<p><img alt="Contact Customer Armentia after the action: ZIP 01007, city Armentia (01007) and state Araba/Álava (ES)" src="https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/05_contact_dupa_actiune.png" /></p>
+</li>
 </ol>
 </div>
 <div class="section" id="changelog">
 <h1><a class="toc-backref" href="#toc-entry-2">Changelog</a></h1>
 <div class="section" id="section-1">
-<h2><a class="toc-backref" href="#toc-entry-3">19.0.1.0.0 (2026-11-16)</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-3">20.0.1.0.0 (2026-11-16)</a></h2>
+<p><strong>Changed</strong></p>
+<ul class="simple">
+<li>Migration to Odoo 20: the PostgreSQL codes to retry are defined in the
+module (<tt class="docutils literal">odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY</tt> was
+removed) and the relink position uses <tt class="docutils literal">ir.config_parameter</tt>
+<tt class="docutils literal">get_int</tt> / <tt class="docutils literal">set_int</tt>.</li>
+</ul>
+</div>
+<div class="section" id="section-2">
+<h2><a class="toc-backref" href="#toc-entry-4">19.0.1.0.0 (2026-11-16)</a></h2>
 <p><strong>Added</strong></p>
 <ul class="simple">
 <li>Spanish localities with postal code and region, from GeoNames.</li>
 <li>City and region filled in from the postal code on Spanish addresses;
 action and scheduled action to link the existing contacts.</li>
+<li>Consultant sheet (readme/FISA_CONSULTANT.md) and screenshots, in
+English.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="bug-tracker">
-<h1><a class="toc-backref" href="#toc-entry-4">Bug Tracker</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-5">Bug Tracker</a></h1>
 <p>Bugs are tracked on <a class="reference external" href="https://www.terrabit.ro/helpdesk">Terrabit Issues</a>.
 In case of trouble, please check there if your issue has already been reported.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h1><a class="toc-backref" href="#toc-entry-5">Credits</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-6">Credits</a></h1>
 <div class="section" id="authors">
-<h2><a class="toc-backref" href="#toc-entry-6">Authors</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">Authors</a></h2>
 <ul class="simple">
 <li>Terrabit</li>
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h2><a class="toc-backref" href="#toc-entry-7">Maintainers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-8">Maintainers</a></h2>
 <p>Current maintainer:</p>
 <p><a class="reference external image-reference" href="https://github.com/dhongu"><img alt="dhongu" src="https://github.com/dhongu.png?size=40px" /></a></p>
-<p>This module is part of the <a class="reference external" href="https://github.com/dhongu/l10n-spain/tree/19.0/l10n_es_zip">dhongu/l10n-spain</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/dhongu/l10n-spain/tree/20.0/l10n_es_zip">dhongu/l10n-spain</a> project on GitHub.</p>
 <p>You are welcome to contribute.</p>
 </div>
 </div>

@@ -111,10 +111,10 @@ class TestEsZipScreenshots(ScreenshotCase or object):
         country = env.ref("base.es")
         Partner = env["res.partner"]
         cls.partner_unique = Partner.create(
-            {"name": "Example Ibarra Ltd", "is_company": True, "country_id": country.id, "street": "Main Street 7"}
+            {"name": "Example Ibarra Ltd", "country_id": country.id, "street": "Main Street 7"}
         )
         cls.partner_shared = Partner.create(
-            {"name": "Example Armentia Ltd", "is_company": True, "country_id": country.id, "street": "Station Road 12"}
+            {"name": "Example Armentia Ltd", "country_id": country.id, "street": "Station Road 12"}
         )
         # contacte importate cu orașul scris liber, fără localitate din listă și fără provincie
         cls.imported = Partner.with_context(tracking_disable=True).create(
