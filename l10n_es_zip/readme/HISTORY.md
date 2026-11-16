@@ -1,3 +1,11 @@
+## 20.0.1.0.0 (2026-11-16)
+
+**Changed**
+
+- Migration to Odoo 20: the PostgreSQL codes to retry are defined in the module
+  (`odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY` was removed) and the relink
+  position uses `ir.config_parameter` `get_int` / `set_int`.
+
 ## 19.0.1.0.0 (2026-11-16)
 
 **Added**

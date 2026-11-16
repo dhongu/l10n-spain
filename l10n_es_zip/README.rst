@@ -17,7 +17,7 @@ Spain - City from ZIP
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-dhongu%2Fl10n--spain-lightgray.png?logo=github
-    :target: https://github.com/dhongu/l10n-spain/tree/19.0/l10n_es_zip
+    :target: https://github.com/dhongu/l10n-spain/tree/20.0/l10n_es_zip
     :alt: dhongu/l10n-spain
 
 |badge1| |badge2| |badge3|
@@ -54,19 +54,53 @@ the postal code.
 Usage
 =====
 
-1. Open *Contacts → Configuration → Localities* (developer mode) and
-   filter on a postal code: the Spanish localities of that postal code
-   are listed with their region.
+1. As an administrator, open **Contacts → Configuration → Localization →
+   Cities** and search for a postal code: the Spanish localities of that
+   postal code are listed with their province.
+
+   |Cities list filtered on the postal code 01007: the localities
+   Armentia, Vitoria-Gasteiz, all of the state Araba/Álava (ES)|
+
 2. Open a Spanish contact and type the postal code in the address: the
    city and the region are filled in.
+
+   |Contact in Spain: the postal code 01160 fills in the city Ibarra and
+   the state Araba/Álava (ES)|
+
 3. When the postal code is shared by several localities, only the region
    is filled in; choose the city from the list (type the postal code or
    the name in the city field).
-4. To fix the existing contacts, select them in the contacts list and
-   use *Actions → Spain: set city from ZIP*.
+
+   |Contact in Spain: the postal code 01007 fills in the state
+   Araba/Álava (ES); the city field lists the localities of 01007|
+
+4. To complete existing or imported contacts, select them in the list
+   and run *Actions → Spain: set city from ZIP*.
+
+   |Contacts list with Spanish contacts selected and the Actions menu
+   open on Spain: set city from ZIP|
+
+   |Contact Customer Armentia after the action: ZIP 01007, city Armentia
+   (01007) and state Araba/Álava (ES)|
+
+.. |Cities list filtered on the postal code 01007: the localities Armentia, Vitoria-Gasteiz, all of the state Araba/Álava (ES)| image:: https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/01_lista_localitati_cap.png
+.. |Contact in Spain: the postal code 01160 fills in the city Ibarra and the state Araba/Álava (ES)| image:: https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/02_partener_cap_unic.png
+.. |Contact in Spain: the postal code 01007 fills in the state Araba/Álava (ES); the city field lists the localities of 01007| image:: https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/03_partener_cap_comun.png
+.. |Contacts list with Spanish contacts selected and the Actions menu open on Spain: set city from ZIP| image:: https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/04_actiune_contacte_existente.png
+.. |Contact Customer Armentia after the action: ZIP 01007, city Armentia (01007) and state Araba/Álava (ES)| image:: https://raw.githubusercontent.com/dhongu/l10n-spain/20.0/l10n_es_zip/static/description/en/05_contact_dupa_actiune.png
 
 Changelog
 =========
+
+20.0.1.0.0 (2026-11-16)
+-----------------------
+
+**Changed**
+
+- Migration to Odoo 20: the PostgreSQL codes to retry are defined in the
+  module (``odoo.service.model.PG_CONCURRENCY_ERRORS_TO_RETRY`` was
+  removed) and the relink position uses ``ir.config_parameter``
+  ``get_int`` / ``set_int``.
 
 19.0.1.0.0 (2026-11-16)
 -----------------------
@@ -76,6 +110,8 @@ Changelog
 - Spanish localities with postal code and region, from GeoNames.
 - City and region filled in from the postal code on Spanish addresses;
   action and scheduled action to link the existing contacts.
+- Consultant sheet (readme/FISA_CONSULTANT.md) and screenshots, in
+  English.
 
 Bug Tracker
 ===========
@@ -104,6 +140,6 @@ Current maintainer:
 
 |maintainer-dhongu| 
 
-This module is part of the `dhongu/l10n-spain <https://github.com/dhongu/l10n-spain/tree/19.0/l10n_es_zip>`_ project on GitHub.
+This module is part of the `dhongu/l10n-spain <https://github.com/dhongu/l10n-spain/tree/20.0/l10n_es_zip>`_ project on GitHub.
 
 You are welcome to contribute.

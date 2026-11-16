@@ -100,11 +100,11 @@ class TestCityFromZip(TransactionCase):
         partner = self._create_partner()
         cron_model = type(self.env["ir.cron"])
         # saved position before the contact: the cron resumes from it, relinks it and finishes
-        params.set_param(RELINK_PARAM, partner.id - 1)
+        params.set_int(RELINK_PARAM, partner.id - 1)
         with patch.object(cron_model, "_commit_progress", return_value=float("inf")) as progress:
             self.Partner._cron_l10n_es_relink_partners()
         self.assertTrue(partner.city_id)
-        self.assertEqual(int(params.get_param(RELINK_PARAM)), 0)
+        self.assertEqual(params.get_int(RELINK_PARAM), 0)
         progress.assert_called_with(remaining=0, deactivate=True)
 
     def test_post_init_hook_large_database_uses_cron(self):
