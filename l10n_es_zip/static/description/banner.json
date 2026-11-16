@@ -6,5 +6,6 @@
     "Spanish localities from GeoNames",
     "City and province from the postal code",
     "Bulk link of existing contacts"
-  ]
+  ],
+  "flag": "es"
 }
